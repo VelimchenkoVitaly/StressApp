@@ -12,7 +12,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import com.example.stressapp.databinding.ActivityMainBinding
-
+import android.content.Intent
 import androidx.fragment.app.DialogFragment
 import androidx.appcompat.app.AlertDialog
 
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(R.string.everydayTest)
         builder.setMessage(R.string.everydayDescription)
-        builder.setNegativeButton(R.string.goToTest) { dialogInterface, i ->  }
+        builder.setNegativeButton(R.string.goToTest) { dialogInterface, i -> startActivity(Intent(this, TestActivity::class.java )) }
         builder.show()
     }
 
