@@ -121,10 +121,19 @@ class TestActivity : AppCompatActivity() {
     {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(R.string.testPassed)
-        builder.setMessage((wellbeing/10).toString() + "\n" + (activeness/10).toString()+ "\n" + (mood/10).toString())
+        builder.setMessage("Самочувствие: " + resultToString(wellbeing/10) + "\n" + "Активность: " + resultToString(activeness/10)+ "\n" + "Настроение: " + resultToString(mood/10))
 
         builder.setNegativeButton(R.string.exit) { dialogInterface, i -> startActivity(Intent(this, MainActivity::class.java )) }
         builder.show()
+    }
+
+    private fun resultToString(result: Int): String
+    {
+        when (result){
+            in 0..4 -> {return "ниже нормы"}
+            in 4..5 -> {return "в норме"}
+            else -> {return "благоприятное состояние"}
+        }
     }
 
 }
