@@ -21,9 +21,9 @@
     <string name="two">2</string>
     <string name="one">1</string>
     <string name="zero">0</string>
-
-    
-
-
+    <string name="nextState">следующее состояние</string>
+    <string name="testPassed">Вы прошли тест!</string>
+    <string name="results">Ваши результаты:</string>
+    <string name="exit">Выход</string>
 
 </resources>
