@@ -5,40 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/greenL"
+    android:background="@drawable/back1"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_anchor="@+id/constraintLayout"
+        app:layout_anchorGravity="center">
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/ourBarChart"
+            android:layout_width="367dp"
+            android:layout_height="426dp"
+
+            app:layout_constraintBottom_toTopOf="@+id/testButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/testButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="307dp"
-            android:backgroundTint="@color/greenD"
-            android:text="@string/everydayTest"
-            android:typeface="serif"
+            android:layout_width="355dp"
+            android:layout_height="64dp"
+            android:backgroundTint= "#2F614C"
             android:onClick="testMe"
-
+            android:text="@string/everydayTest"
+            android:textSize="18sp"
+            android:typeface="serif"
             app:layout_constraintBottom_toBottomOf="parent"
+
+
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="0.392"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.55" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.728" />
 
         <Button
             android:id="@+id/reportButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="@color/greenD"
-            android:text="@string/report"
-            android:typeface="serif"
+            android:layout_width="352dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint= "#2F614C"
             android:onClick="reportMe"
+            android:text="@string/report"
+            android:textSize="18sp"
+            android:typeface="serif"
 
             app:layout_constraintEnd_toEndOf="@+id/testButton"
             app:layout_constraintHorizontal_bias="0.0"
@@ -47,19 +62,20 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="201dp"
-            android:layout_height="56dp"
+            android:layout_width="242dp"
+            android:layout_height="44dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="324dp"
             android:text="@string/result"
-            android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textSize="25sp"
             android:typeface="serif"
             app:layout_constraintBottom_toTopOf="@+id/testButton"
             app:layout_constraintEnd_toEndOf="@+id/testButton"
-            app:layout_constraintHorizontal_bias="0.536"
+            app:layout_constraintHorizontal_bias="0.447"
             app:layout_constraintStart_toStartOf="@+id/testButton"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="TextSizeCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

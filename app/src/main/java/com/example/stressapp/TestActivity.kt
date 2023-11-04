@@ -18,7 +18,7 @@ class TestActivity : AppCompatActivity() {
     private var buttonFlag : Int = 0
     private val negativeListL: List<String> = listOf("Самочувствие плохое", "Чувствую себя слабым", "Разбитый", "Обессиленный", "Напряженный", "Больной", "Усталый", "Изнуренный", "Легко утомляемый", "Вялый", "Пассивный", "Малоподвижный", "Медлительный", "Бездеятельный", "Безучастный", "Равнодушный", "Сонливый", "Желание отдохнуть", "Соображать трудно", "Рассеянный", "Грустный", "Плохое настроение", "Несчастный", "Мрачный", "Унылый", "Печальный", "Озабоченный", "Пессимистичный", "Разочарованный", "Недовольный", "")
     private val positiveListR: List<String> = listOf("Самочувствие хорошее", "Чувствую себя сильным", "Работоспособный", "Полный сил", "Расслабленный", "Здоровый", "Отдохнувший", "Свежий", "Выносливый", "Бодрый", "Активный", "Подвижный", "Быстрый", "Деятельный", "Увлеченный", "Взволнованный", "Возбужденный", "Желание работать", "Соображать легко", "Внимательный", "Веселый", "Хорошее настроение", "Счастливый", "Жизнерадостный", "Восторженный", "Радостный", "Спокойный", "Оптимистичный", "Полный надежд", "Довольный", "")
-
+    val db = Database(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
@@ -120,6 +120,8 @@ class TestActivity : AppCompatActivity() {
     private fun createExitDialog()
     {
         val builder = AlertDialog.Builder(this)
+        db.addData(wellbeing, activeness, mood )
+        builder.setTitle(R.string.testPassed)
         builder.setTitle(R.string.testPassed)
         builder.setMessage("Самочувствие: " + resultToString(wellbeing/10) + "\n" + "Активность: " + resultToString(activeness/10)+ "\n" + "Настроение: " + resultToString(mood/10))
 
