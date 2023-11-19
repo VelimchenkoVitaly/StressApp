@@ -163,10 +163,6 @@ class MainActivity : AppCompatActivity() {
             mood += a.userMood
             index++
         }
-
-
-
-
         return ("В среднем за последние семь дней" + "\n"+"Самочувствие: " + resultToString(wellbeing/70) + "\n" + "Активность: " + resultToString(activeness/70)+ "\n" + "Настроение: " + resultToString(mood/70)+"\n"+ "Сегодня: " + "\n"+"Самочувствие: "+ resultToString(todayWellbeing/10) + "\n" + "Активность: " + resultToString(todayActivness/10)+ "\n" + "Настроение: " + resultToString(todayMood/10) )
     }
 
@@ -185,7 +181,7 @@ class MainActivity : AppCompatActivity() {
 
     public fun reportMe(view: View)
     {
-        //createWarningDialog()
+        createWarningDialogResults()
     }
     /*override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
